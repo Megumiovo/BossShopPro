@@ -12,29 +12,29 @@ public class BSPointsPluginCoins extends BSPointsPlugin {
 
     @Override
     public double getPoints(OfflinePlayer player) {
-        return Coins.getEcononomy().getBalance(player.getName());
+        return Coins.getEconomy().getBalance(player);
     }
 
     @Override
     public double setPoints(OfflinePlayer player, double points) {
-        double current = Coins.getEcononomy().getBalance(player.getName());
+        double current = Coins.getEconomy().getBalance(player);
         if (current > points) {
-            Coins.getEcononomy().withdrawPlayer(player.getName(), current - points);
+            Coins.getEconomy().withdrawPlayer(player, current - points);
         } else {
-            Coins.getEcononomy().depositPlayer(player.getName(), points - current);
+            Coins.getEconomy().depositPlayer(player, points - current);
         }
         return points;
     }
 
     @Override
     public double takePoints(OfflinePlayer player, double points) {
-        EconomyResponse response = Coins.getEcononomy().withdrawPlayer(player.getName(), points);
+        EconomyResponse response = Coins.getEconomy().withdrawPlayer(player, points);
         return response.balance;
     }
 
     @Override
     public double givePoints(OfflinePlayer player, double points) {
-        EconomyResponse response = Coins.getEcononomy().depositPlayer(player.getName(), points);
+        EconomyResponse response = Coins.getEconomy().depositPlayer(player, points);
         return response.balance;
     }
 

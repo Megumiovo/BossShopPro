@@ -76,10 +76,6 @@ public class PointsManager {
                 this.pa = new BSPointsPluginVotingPlugin();
                 break;
 
-            case KINGDOMS:
-                this.pa = new BSPointsPluginKingdoms();
-                break;
-
             case GadetsMenu:
                 this.pa = new BSPointsPluginGadgetsMenu();
                 break;

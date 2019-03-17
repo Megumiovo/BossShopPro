@@ -3,6 +3,7 @@ package org.black_ixx.bossshop.misc;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.black_ixx.bossshop.managers.ClassManager;
+import org.bukkit.OfflinePlayer;
 
 import java.util.List;
 
@@ -39,14 +40,29 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public EconomyResponse createBank(String s, OfflinePlayer offlinePlayer) {
+        return null;
+    }
+
+    @Override
     public boolean createPlayerAccount(String arg0) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
         return false;
     }
 
     @Override
+    public boolean createPlayerAccount(OfflinePlayer offlinePlayer) {
+        return false;
+    }
+
+    @Override
     public boolean createPlayerAccount(String arg0, String arg1) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return false;
+    }
+
+    @Override
+    public boolean createPlayerAccount(OfflinePlayer offlinePlayer, String s) {
         return false;
     }
 
@@ -75,8 +91,18 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public EconomyResponse depositPlayer(OfflinePlayer offlinePlayer, double v) {
+        return null;
+    }
+
+    @Override
     public EconomyResponse depositPlayer(String arg0, String arg1, double arg2) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return null;
+    }
+
+    @Override
+    public EconomyResponse depositPlayer(OfflinePlayer offlinePlayer, String s, double v) {
         return null;
     }
 
@@ -99,8 +125,18 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public double getBalance(OfflinePlayer offlinePlayer) {
+        return 0;
+    }
+
+    @Override
     public double getBalance(String arg0, String arg1) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return 0;
+    }
+
+    @Override
+    public double getBalance(OfflinePlayer offlinePlayer, String s) {
         return 0;
     }
 
@@ -123,8 +159,18 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public boolean has(OfflinePlayer offlinePlayer, double v) {
+        return false;
+    }
+
+    @Override
     public boolean has(String arg0, String arg1, double arg2) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return false;
+    }
+
+    @Override
+    public boolean has(OfflinePlayer offlinePlayer, String s, double v) {
         return false;
     }
 
@@ -135,8 +181,18 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public boolean hasAccount(OfflinePlayer offlinePlayer) {
+        return false;
+    }
+
+    @Override
     public boolean hasAccount(String arg0, String arg1) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return false;
+    }
+
+    @Override
+    public boolean hasAccount(OfflinePlayer offlinePlayer, String s) {
         return false;
     }
 
@@ -153,8 +209,18 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public EconomyResponse isBankMember(String s, OfflinePlayer offlinePlayer) {
+        return null;
+    }
+
+    @Override
     public EconomyResponse isBankOwner(String arg0, String arg1) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return null;
+    }
+
+    @Override
+    public EconomyResponse isBankOwner(String s, OfflinePlayer offlinePlayer) {
         return null;
     }
 
@@ -171,8 +237,18 @@ public class NoEconomy implements Economy {
     }
 
     @Override
+    public EconomyResponse withdrawPlayer(OfflinePlayer offlinePlayer, double v) {
+        return null;
+    }
+
+    @Override
     public EconomyResponse withdrawPlayer(String arg0, String arg1, double arg2) {
         ClassManager.manager.getBugFinder().warn("No Economy Plugin was found... You need one if you want to work with Money! Get it there: http://plugins.bukkit.org/.");
+        return null;
+    }
+
+    @Override
+    public EconomyResponse withdrawPlayer(OfflinePlayer offlinePlayer, String s, double v) {
         return null;
     }
 
