@@ -4,7 +4,26 @@ description: The BOSS Shop Plugin *PRO VERSION*
 author: Black_ixx
 website: http://felix.neuby.de
 main: org.black_ixx.bossshop.BossShop
-softdepend: [PlayerShops GUI, ItemShops, ThirdCurrency, GuiShopManager, LimitedUses, TrickyShops, Vault, PlayerPoints, CommandPoints, PointsAPI, TokenEnchant, EnjinMinecraftPlugin, Jobs, Kingdoms, MySQLTokens, MySQL-Tokens, VotingPlugin, SilkSpawners, PlaceholderAPI]
+softdepend:
+  - PlayerShops GUI
+  - ItemShops
+  - ThirdCurrency
+  - GuiShopManager
+  - LimitedUses
+  - TrickyShops
+  - Vault
+  - PlayerPoints
+  - CommandPoints
+  - PointsAPI
+  - TokenEnchant
+  - EnjinMinecraftPlugin
+  - Jobs
+  - Kingdoms
+  - MySQLTokens
+  - MySQL-Tokens
+  - VotingPlugin
+  - PlaceholderAPI
+
 commands:
   bs:
    description: BossShop command
