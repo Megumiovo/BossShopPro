@@ -28,8 +28,6 @@ public abstract class ItemDataPart {
             ENCHANTMENT,
             PLAYERHEAD,
             CUSTOMSKULL,
-            MOBSPAWNER,
-            MOBEGG,
             ITEMFLAGS,
             COLOR,
             POTIONEFFECT,
@@ -52,8 +50,6 @@ public abstract class ItemDataPart {
         LORE = registerType(new ItemDataPartLore());
         ENCHANTMENT = registerType(new ItemDataPartEnchantment());
         PLAYERHEAD = registerType(new ItemDataPartPlayerhead());
-        MOBSPAWNER = registerType(new ItemDataPartMobspawner());
-        MOBEGG = registerType(new ItemDataPartMobEgg());
         CUSTOMSKULL = registerType(new ItemDataPartCustomSkull());
         ITEMFLAGS = registerType(new ItemDataPartItemflags());
         COLOR = registerType(new ItemDataPartColor());

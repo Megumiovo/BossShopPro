@@ -78,14 +78,14 @@ public class ItemDataPartEnchantment extends ItemDataPart {
         if (i.getEnchantments() != null) {
             Map<Enchantment, Integer> enchantments = i.getEnchantments();
             for (Enchantment enchantment : enchantments.keySet()) {
-                output.add("enchantment:" + enchantment.getKey().getKey() + "#" + enchantments.get(enchantment));
+                output.add("enchantment:" + enchantment.getName() + "#" + enchantments.get(enchantment));
             }
         }
         if (i.getItemMeta() instanceof EnchantmentStorageMeta) {
             EnchantmentStorageMeta meta = (EnchantmentStorageMeta) i.getItemMeta();
             Map<Enchantment, Integer> enchantments = meta.getStoredEnchants();
             for (Enchantment enchantment : enchantments.keySet()) {
-                output.add("enchantment:" + enchantment.getKey().getKey() + "#" + enchantments.get(enchantment));
+                output.add("enchantment:" + enchantment.getName() + "#" + enchantments.get(enchantment));
             }
         }
         return output;

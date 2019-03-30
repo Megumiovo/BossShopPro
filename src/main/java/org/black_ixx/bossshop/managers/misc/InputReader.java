@@ -122,7 +122,7 @@ public class InputReader {
 
     public static Enchantment readEnchantment(String name) {
         if (name != null) {
-            return EnchantmentWrapper.getByKey(NamespacedKey.minecraft(name.toLowerCase()));
+            return Enchantment.getByName(name.toUpperCase());
         }
         return null;
     }
@@ -202,9 +202,9 @@ public class InputReader {
 
 
     public static Material readMaterial(String s) {
-        Material m = Material.matchMaterial(s, false);
+        Material m = Material.matchMaterial(s);
         if (m == null) {
-            m = Material.matchMaterial(s, true);
+            m = Material.matchMaterial(s);
         }
         return m;
     }

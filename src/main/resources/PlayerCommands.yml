@@ -8,7 +8,8 @@ shop:
     - name:&f&lSelect other player
     - lore:&8Click to select an other player.
     - amount:1
-    - type:PLAYER_HEAD
+    - type:SKULL_ITEM
+    - durability:3
     RewardType: SHOP
     ForceInput: PLAYER
     ForceInputMessage: '&8Enter the name of a player you want to select.'

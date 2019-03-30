@@ -20,7 +20,7 @@ public class ItemDataPartBanner extends ItemDataPart {
     @Override
     public ItemStack transform(ItemStack item, String used_name, String argument) {
         if (Bukkit.getVersion().contains("1.8") || Bukkit.getVersion().contains("1.9")) {  //TODO: ADD Documentation and test this feature out
-            if (item.getType() != Material.LEGACY_BANNER) {
+            if (item.getType() != Material.BANNER) {
                 ClassManager.manager.getBugFinder().severe("Mistake in Config: '" + argument + "' is not a valid '" + used_name + "'.");
                 return item;
             }

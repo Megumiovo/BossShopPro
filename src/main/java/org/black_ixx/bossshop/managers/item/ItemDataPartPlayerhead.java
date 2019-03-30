@@ -14,8 +14,9 @@ public class ItemDataPartPlayerhead extends ItemDataPart {
     @Override
     public ItemStack transform(ItemStack item, String used_name, String argument) {
         if (!(item.getItemMeta() instanceof SkullMeta)) {
-            ClassManager.manager.getBugFinder().warn("Mistake in Config: Itemdata of type '" + used_name + "' with value '" + argument + "' can not be added to an item with material '" + item.getType().name() + "'. Don't worry I'll automatically transform the material into '" + Material.PLAYER_HEAD.name() + ".");
-            item.setType(Material.PLAYER_HEAD);
+            ClassManager.manager.getBugFinder().warn("Mistake in Config: Itemdata of type '" + used_name + "' with value '" + argument + "' can not be added to an item with material '" + item.getType().name() + "'. Don't worry I'll automatically transform the material into '" + Material.SKULL_ITEM + "' with durability '3'.");
+            item.setType(Material.SKULL_ITEM);
+            item.setDurability((short) 3);
         }
 
         SkullMeta meta = (SkullMeta) item.getItemMeta();
@@ -60,7 +61,7 @@ public class ItemDataPartPlayerhead extends ItemDataPart {
     public List<String> read(ItemStack i, List<String> output) {
         if (i.getItemMeta() instanceof SkullMeta) {
             SkullMeta meta = (SkullMeta) i.getItemMeta();
-            if (i.getType() == Material.PLAYER_HEAD) {
+            if (i.getDurability() == 3) {
                 if (meta.hasOwner()) {
                     output.add("playerhead:" + meta.getOwner());
                 }
@@ -72,8 +73,8 @@ public class ItemDataPartPlayerhead extends ItemDataPart {
 
     @Override
     public boolean isSimilar(ItemStack shop_item, ItemStack player_item, BSBuy buy, Player p) {
-        if (shop_item.getType() == Material.PLAYER_HEAD) {
-            if (player_item.getType() != Material.PLAYER_HEAD) {
+        if (shop_item.getType() == Material.SKULL_ITEM) {
+            if (player_item.getType() != Material.SKULL_ITEM) {
                 return false;
             }
 

@@ -10,17 +10,22 @@ shop:
     - 'lore:&c10 Red, &110 Blue, &e10 Yellow and &a10 Green Wool #&cPrice: 400 Money'
     - name:&9Colored Wool
     - amount:40
-    - type:YELLOW_WOOL
+    - type:WOOL
+    - durability:11
     RewardType: ITEM
     Reward:
     - - amount:10
-      - type:RED_WOOL
+      - type:WOOL
+      - durability:5
     - - amount:10
-      - type:BLUE_WOOL
+      - type:WOOL
+      - durability:4
     - - amount:10
-      - type:YELLOW_WOOL
+      - type:WOOL
+      - durability:11
     - - amount:10
-      - type:GREEN_WOOL
+      - type:WOOL
+      - durability:14
     PriceType: MONEY
     Price: 400.0
     Message: '&eYou bought colored Wool! Money left: &c%left%'
@@ -59,7 +64,7 @@ shop:
       - amount:1
       - name:&5ShadowArmor
       - color:110#10#140
-      - enchantment:PROTECTION#10
+      - enchantment:PROTECTION_ENVIRONMENTAL#10
     PriceType: MONEY
     Price: 1500
     Message: '&eYou bought 1 %itemname%! &eMoney left: &c%left%'
@@ -87,8 +92,9 @@ shop:
     - 'lore:&cPrice: 10000 Money'
     RewardType: ITEM
     Reward:
-    - - type:ENCHANTED_GOLDEN_APPLE
+    - - type:GOLDEN_APPLE
       - amount:1
+      - durability:1
     PriceType: MONEY
     Price: 10000
     Message: '&eYou bought 1 %itemname%! &eMoney left: &c%left%'
@@ -102,9 +108,9 @@ shop:
     - 'lore1:&8Enchants the Item in your hand.'
     - 'lore2:&cPrice: 25 Exp Level'
     - 'lore4:&cOnly for VIPs!'
-    - enchantment:UNBREAKING#3
+    - enchantment:DURABILITY#3
     RewardType: ENCHANTMENT
-    Reward: UNBREAKING#3
+    Reward: DURABILITY#3
     PriceType: EXP
     Price: 25
     Message: '&eThe Enchantment Unbreaking III was added to your item!'
@@ -116,7 +122,7 @@ shop:
     - amount:1
     - name:&4[*] &c%shopitemname% &4[*]
     - 'lore:&cPrice: 2000 Points'
-    - enchantment:SHARPNESS#5
+    - enchantment:DAMAGE_ALL#5
     - enchantment:FIRE_ASPECT#2
     RewardType: ITEM
     Reward:
@@ -124,7 +130,7 @@ shop:
       - amount:1
       - name:&cBossSword
       - lore:&8&o%player%'s Sword
-      - enchantment:SHARPNESS#5
+      - enchantment:DAMAGE_ALL#5
       - enchantment:FIRE_ASPECT#2
     PriceType: POINTS
     Price: 2000

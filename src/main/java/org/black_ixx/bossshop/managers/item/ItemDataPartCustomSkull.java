@@ -55,7 +55,7 @@ public class ItemDataPartCustomSkull extends ItemDataPart {
     }
 
     public static String readSkullTexture(ItemStack i) {
-        if (i.getType() == Material.PLAYER_HEAD) {
+        if (i.getType() == Material.SKULL_ITEM) {
             SkullMeta meta = (SkullMeta) i.getItemMeta();
             Field profileField = null;
             try {
@@ -87,8 +87,8 @@ public class ItemDataPartCustomSkull extends ItemDataPart {
     @Override
     public ItemStack transform(ItemStack item, String used_name, String argument) {
         if (!(item.getItemMeta() instanceof SkullMeta)) {
-            ClassManager.manager.getBugFinder().warn("Mistake in Config: Itemdata of type '" + used_name + "' with value '" + argument + "' can not be added to an item with material '" + item.getType().name() + "'. Don't worry I'll automatically transform the material into '" + Material.PLAYER_HEAD + "' with durability '3'.");
-            item.setType(Material.PLAYER_HEAD);
+            ClassManager.manager.getBugFinder().warn("Mistake in Config: Itemdata of type '" + used_name + "' with value '" + argument + "' can not be added to an item with material '" + item.getType().name() + "'. Don't worry I'll automatically transform the material into '" + Material.SKULL + "' with durability '3'.");
+            item.setType(Material.SKULL_ITEM);
         }
         item = transformSkull(item, argument);
         return item;

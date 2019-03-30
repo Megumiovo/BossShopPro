@@ -21,7 +21,7 @@ shop:
     - name:&f&l&nWarp:&0 &2&lPvP
     - amount:1
     - type:DIAMOND_SWORD
-    - enchantment:SHARPNESS#5
+    - enchantment:DAMAGE_ALL#5
     - itemflag:all
     RewardType: PLAYERCOMMAND
     Reward:

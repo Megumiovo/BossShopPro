@@ -6,7 +6,7 @@ signs:
 shop:
   EarthGame:
     MenuItem:
-    - type:BROWN_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aEarth Game
     - lore:&7Click to connect!
@@ -18,10 +18,11 @@ shop:
     InventoryLocation: 2
   Creative:
     MenuItem:
-    - type:BLUE_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aCreative
     - lore:&7Click to connect!
+    - durability:11
     RewardType: BUNGEECORDSERVER
     Reward: creative
     PriceType: NOTHING
@@ -29,10 +30,11 @@ shop:
     InventoryLocation: 3
   HungerGames:
     MenuItem:
-    - type:YELLOW_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aHunger Games
     - lore:&7Click to connect!
+    - durability:14
     RewardType: BUNGEECORDSERVER
     Reward: hungergames
     PriceType: NOTHING
@@ -40,10 +42,11 @@ shop:
     InventoryLocation: 4
   Survival:
     MenuItem:
-    - type:BLACK_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aSurvival
     - lore:&7Click to connect!
+    - durability:10
     RewardType: BUNGEECORDSERVER
     Reward: survival
     PriceType: NOTHING
@@ -51,10 +54,11 @@ shop:
     InventoryLocation: 5
   PvP:
     MenuItem:
-    - type:RED_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aPvP
     - lore:&7Click to connect!
+    - durability:5
     RewardType: BUNGEECORDSERVER
     Reward: pvp
     PriceType: NOTHING
@@ -62,10 +66,11 @@ shop:
     InventoryLocation: 6
   Factions:
     MenuItem:
-    - type:PURPLE_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aFactions
     - lore:&7Click to connect!
+    - durability:13
     RewardType: BUNGEECORDSERVER
     Reward: factions
     PriceType: NOTHING
@@ -73,10 +78,11 @@ shop:
     InventoryLocation: 7
   ZombieV:
     MenuItem:
-    - type:GREEN_TERRACOTTA
+    - type:STAINED_CLAY
     - amount:1
     - name:&aZombieV &6&ONew!
     - lore:&7Click to connect!
+    - durability:4
     RewardType: BUNGEECORDSERVER
     Reward: zombiev
     PriceType: NOTHING

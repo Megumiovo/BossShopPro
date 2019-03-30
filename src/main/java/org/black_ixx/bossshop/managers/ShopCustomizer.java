@@ -146,7 +146,7 @@ public class ShopCustomizer {
 
         ItemStack current = inventory.getItem(slot);
         if (current != null) {
-            if (current.getType() == Material.PLAYER_HEAD) {
+            if (current.getType() == Material.SKULL_ITEM) {
                 if (ClassManager.manager.getItemStackChecker().isEqualShopItemAdvanced(item, current, true, p)) {
                     return;
                 }

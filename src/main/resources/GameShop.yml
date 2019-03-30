@@ -74,7 +74,7 @@ shop:
     - lore:&cCosts %price%.
     RewardType: ITEM
     Reward:
-    - - enchantment:SHARPNESS#5
+    - - enchantment:DAMAGE_ALL#5
       - enchantment:FIRE_ASPECT#2
       - type:DIAMOND_SWORD
       - amount:1
@@ -106,7 +106,7 @@ shop:
     - lore:&cCosts %price%.
     RewardType: ITEM
     Reward:
-    - - enchantment:SHARPNESS#10
+    - - enchantment:DAMAGE_ALL#10
       - type:DIAMOND_AXE
       - amount:1
       - name:&4&lBerserk Axe
@@ -115,15 +115,15 @@ shop:
     Message: '&2You have bought a new weapon for &c%price%&2.'
     ExtraPermission: Permission.VIP
     InventoryLocation: 7
-  enchantment_SHARPNESS:
+  enchantment_sharpness:
     MenuItem:
     - 'lore1:&6Enchant the sword in your hand.'
     - 'lore2:&cCosts 30 Exp levels.'
     - amount:1
     - type:ENCHANTED_BOOK
-    - enchantment:SHARPNESS#4
+    - enchantment:DAMAGE_ALL#4
     RewardType: enchantment
-    Reward: SHARPNESS#4
+    Reward: DAMAGE_ALL#4
     Message: '&2Successfully enchanted.'
     PriceType: EXP
     Price: 30
@@ -131,14 +131,14 @@ shop:
     Condition:
     - type:placeholdermatch
     - '%item_in_hand%:match:WOOD_SWORD,STONE_SWORD,IRON_SWORD,GOLD_SWORD,DIAMOND_SWORD'
-  enchantment_SHARPNESS_blocked:
+  enchantment_sharpness_blocked:
     MenuItem:
     - 'lore1:&6Enchant the sword in your hand.'
     - 'lore2:&cCosts 30 Exp levels.'
     - 'lore4:&cCan only be used when having a sword in your main hand.'
     - amount:1
     - type:ENCHANTED_BOOK
-    - enchantment:SHARPNESS#4
+    - enchantment:DAMAGE_ALL#4
     Message: '&cYou need to have a sword in your main hand.'
     RewardType: NOTHING
     PriceType: NOTHING
@@ -165,8 +165,8 @@ shop:
     - lore:&cCosts %price%.
     RewardType: ITEM
     Reward:
-    - - enchantment:POWER#2
-      - enchantment:FLAME#1
+    - - enchantment:ARROW_DAMAGE#2
+      - enchantment:ARROW_FIRE#1
       - type:BOW
       - amount:1
       - name:&2&lHunter Bow
@@ -183,8 +183,8 @@ shop:
     - lore:&cCosts %price%.
     RewardType: ITEM
     Reward:
-    - - enchantment:PUNCH#2
-      - enchantment:POWER#4
+    - - enchantment:ARROW_KNOCKBACK#2
+      - enchantment:ARROW_DAMAGE#4
       - type:BOW
       - amount:1
       - name:&2&lSoldier Bow
@@ -204,8 +204,8 @@ shop:
     - - name:&5&lInfinity Bow
       - amount:1
       - type:BOW
-      - enchantment:INFINITY#1
-      - enchantment:POWER#4
+      - enchantment:ARROW_INFINITE#1
+      - enchantment:ARROW_DAMAGE#4
     - - amount:1
       - type:ARROW
     PriceType: EXP
@@ -222,8 +222,8 @@ shop:
     - - name:&2&lRanger Bow
       - amount:1
       - type:BOW
-      - enchantment:POWER#7
-      - enchantment:PUNCH#10
+      - enchantment:ARROW_DAMAGE#7
+      - enchantment:ARROW_KNOCKBACK#10
     - - amount:16
       - type:ARROW
     PriceType: EXP
@@ -283,7 +283,8 @@ shop:
     PriceType: ITEM
     Price:
     - - amount:5
-      - type:PLAYER_HEAD
+      - type:SKULL_ITEM
+      - durability:3
     Message: '&2You have bought a new potion for &c5 Player heads&2.'
     ExtraPermission: ''
     InventoryLocation: 30

@@ -68,20 +68,24 @@
 			<id>lang-utils-repo</id>
 			<url>https://raw.github.com/MascusJeoraly/LanguageUtils/mvn-repo/</url>
 		</repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>http://repo.dmulloy2.net/nexus/repository/public/</url>
+        </repository>
 	</repositories>
 	<dependencies>
-		<dependency>
-			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot-api</artifactId>
-			<version>1.13.1-R0.1-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.12.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>	
 			<groupId>org.bukkit</groupId>	
 			<artifactId>craftbukkit</artifactId>	
 			<version>1.11.2-R0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${pom.basedir}/../../../Library/CraftBukkit[1.9.2-1.12]/craftbukkit-1.11.2-R0.1-SNAPSHOT.jar</systemPath>
+            <systemPath>${pom.basedir}/lib/craftbukkit-1.11.2-R0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -95,12 +99,6 @@
 			<version>1.8-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
-		<!--<dependency>
-			<groupId>lilypad.client.connect</groupId>
-			<artifactId>api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>-->
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>Vault</artifactId>
@@ -192,13 +190,6 @@
 			<systemPath>${basedir}/lib/GadgetsMenu.jar</systemPath>
 			<scope>system</scope>
 		</dependency>
-		<!--<dependency>
-			<groupId>org.kingdoms.main</groupId>
-			<artifactId>Kingdoms</artifactId>
-			<version>8.5.3</version>
-			<systemPath>${basedir}/lib/Kingdoms.jar</systemPath>
-			<scope>system</scope>
-		</dependency>-->
 		<dependency>
 			<groupId>me.bukkit.mTokens.Inkzzz</groupId>
 			<artifactId>Tokens</artifactId>
@@ -213,13 +204,6 @@
 			<systemPath>${basedir}/lib/SilkSpawners.jar</systemPath>
 			<scope>system</scope>
 		</dependency>
-		<!--<dependency>
-			<groupId>com.songoda.epicspawners</groupId>
-			<artifactId>EpicSpawners</artifactId>
-			<version>3.1.6</version>
-			<systemPath>${basedir}/lib/EpicSpawners.jar</systemPath>
-			<scope>system</scope>
-		</dependency>-->
 		<dependency>
 			<groupId>me.clip</groupId>
 			<artifactId>placeholderapi</artifactId>
@@ -232,5 +216,10 @@
 			<version>1.6.1</version>
 			<scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib-API</artifactId>
+            <version>4.4.0</version>
+        </dependency>
 	</dependencies>
 </project>

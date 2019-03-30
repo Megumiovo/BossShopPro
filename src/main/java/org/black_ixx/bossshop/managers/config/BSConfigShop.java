@@ -57,7 +57,7 @@ public class BSConfigShop extends BSShop {
             setNeedPermToCreateSign(true);
             setShopName(name);
 
-            ItemStack i = new ItemStack(Material.WHITE_WOOL, 1);
+            ItemStack i = new ItemStack(Material.WOOL, 1, (short) 14);
             ItemMeta m = i.getItemMeta();
             m.setDisplayName(ChatColor.RED + "Your Config File contains mistakes! (" + ymlName + ")");
             List<String> lore = new ArrayList<String>();

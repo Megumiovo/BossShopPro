@@ -162,7 +162,7 @@ shop:
   Monday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:BLUE_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:1
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -171,7 +171,7 @@ shop:
   Tuesday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:GREEN_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:2
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -180,7 +180,7 @@ shop:
   Wednesday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:YELLOW_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:3
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -189,7 +189,7 @@ shop:
   Thursday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:RED_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:4
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -198,7 +198,7 @@ shop:
   Friday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:PURPLE_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:5
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -207,7 +207,7 @@ shop:
   Saturday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:GRAY_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:6
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -216,7 +216,7 @@ shop:
   Sunday_blocked:
     MenuItem:
     - name:&cNot available.
-    - type:CYAN_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:7
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -225,7 +225,7 @@ shop:
   Moving_1:
     MenuItem:
     - name:&c[*]
-    - type:BLUE_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:0
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -237,7 +237,7 @@ shop:
   Moving_2:
     MenuItem:
     - name:&c[*]
-    - type:GREEN_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:1
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -249,7 +249,7 @@ shop:
   Moving_3:
     MenuItem:
     - name:&c[*]
-    - type:YELLOW_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:2
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -261,7 +261,7 @@ shop:
   Moving_4:
     MenuItem:
     - name:&c[*]
-    - type:RED_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:3
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -273,7 +273,7 @@ shop:
   Moving_5:
     MenuItem:
     - name:&c[*]
-    - type:PURPLE_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:4
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -285,7 +285,7 @@ shop:
   Moving_6:
     MenuItem:
     - name:&c[*]
-    - type:GRAY_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:5
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -297,7 +297,7 @@ shop:
   Moving_7:
     MenuItem:
     - name:&c[*]
-    - type:CYAN_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:6
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -309,7 +309,7 @@ shop:
   Moving_8:
     MenuItem:
     - name:&c[*]
-    - type:BLACK_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:7
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''
@@ -321,7 +321,7 @@ shop:
   Moving_9:
     MenuItem:
     - name:&c[*]
-    - type:BROWN_STAINED_GLASS_PANE
+    - type:STAINED_GLASS_PANE:8
     RewardType: NOTHING
     PriceType: NOTHING
     Message: ''

@@ -16,7 +16,8 @@ public class FileHandler {
     public void exportConfigs(BossShop plugin) {
         copyDefaultsFromJar(plugin
                 , "config.yml"
-                , "messages.yml");
+                , "messages.yml"
+                , "nbt.yml");
 
         if (!new File(plugin.getDataFolder().getAbsolutePath() + File.separator + "pagelayout.yml").exists()) {
             copyFromJar(plugin, plugin, false, "pagelayout.yml");
