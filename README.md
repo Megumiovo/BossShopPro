@@ -24,5 +24,5 @@ This BossShop is only compatible `CraftBukkit/Spigot 1.10.2 - 1.12.2`<Br/>
 
 ###新命令<Br/>
 ###New command<Br/>
-* /bs nbt <name> - 将手中的物品保存至nbt.yml文件<Br/>
+* `/bs nbt <name>` - 将手中的物品保存至nbt.yml文件<Br/>
   Format: `-nbt: <name>`
