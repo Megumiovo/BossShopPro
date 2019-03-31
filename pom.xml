@@ -173,7 +173,7 @@
 			<groupId>com.vk2gpz.tokenenchant</groupId>
 			<artifactId>TokenEnchantAPI</artifactId>
 			<version>10.0.0</version>
-			<systemPath>${basedir}/lib/TokenEnchantAPI/TokenEnchantAPI.jar</systemPath>
+			<systemPath>${basedir}/lib/TokenEnchantAPI.jar</systemPath>
 			<scope>system</scope>
 		</dependency>
 		<dependency>

@@ -3,6 +3,7 @@ package org.black_ixx.bossshop;
 
 import org.black_ixx.bossshop.api.BossShopAPI;
 import org.black_ixx.bossshop.api.BossShopAddon;
+import org.black_ixx.bossshop.commands.MainCommands;
 import org.black_ixx.bossshop.core.BSShop;
 import org.black_ixx.bossshop.events.BSReloadedEvent;
 import org.black_ixx.bossshop.inbuiltaddons.InbuiltAddonLoader;
@@ -10,7 +11,6 @@ import org.black_ixx.bossshop.listeners.InventoryListener;
 import org.black_ixx.bossshop.listeners.PlayerListener;
 import org.black_ixx.bossshop.listeners.SignListener;
 import org.black_ixx.bossshop.managers.ClassManager;
-import org.black_ixx.bossshop.managers.CommandManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -47,16 +47,16 @@ public class BossShop extends JavaPlugin {
         manager = new ClassManager(this);
         api = new BossShopAPI(this);
 
-        CommandManager commander = new CommandManager();
+        MainCommands commands = new MainCommands();
 
         if (getCommand("bs") != null) {
-            getCommand("bs").setExecutor(commander);
+            getCommand("bs").setExecutor(commands);
         }
         if (getCommand("bossshop") != null) {
-            getCommand("bossshop").setExecutor(commander);
+            getCommand("bossshop").setExecutor(commands);
         }
         if (getCommand("shop") != null) {
-            getCommand("shop").setExecutor(commander);
+            getCommand("shop").setExecutor(commands);
         }
 
 
