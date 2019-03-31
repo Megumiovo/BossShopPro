@@ -156,7 +156,7 @@ public class BSAddonConfig implements BSAddonStorage {
                 Files.copy(c.getFile(), file);
                 reload();
             } catch (IOException e) {
-                ClassManager.manager.getBugFinder().warn("Unable to copy storage file from '" + c.getFile().getPath() + "' to '" + file.getPath() + "'.");
+                ClassManager.manager.getBugFinder().warn("Unable to copy storage managers from '" + c.getFile().getPath() + "' to '" + file.getPath() + "'.");
                 return false;
             }
             return true;

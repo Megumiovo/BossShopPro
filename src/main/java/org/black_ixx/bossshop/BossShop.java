@@ -1,6 +1,8 @@
 package org.black_ixx.bossshop;
 
 
+import org.black_ixx.bossshop.megumi.managers.NbtManager;
+import lombok.Getter;
 import org.black_ixx.bossshop.api.BossShopAPI;
 import org.black_ixx.bossshop.api.BossShopAddon;
 import org.black_ixx.bossshop.commands.MainCommands;
@@ -19,10 +21,15 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class BossShop extends JavaPlugin {
 
+    private static BossShop instance;
+
     public final static String NAME = "BossShopPro";
     String USER = "%%__USER__%%";
     private ClassManager manager;
     private InventoryListener il;
+
+    /////////////////////////////////////////////////
+    @Getter private NbtManager nbtManager;
 
     /////////////////////////////////////////////////
     private SignListener sl;
@@ -44,6 +51,12 @@ public class BossShop extends JavaPlugin {
     @Override
     public void onEnable() {
         log("Loading data...");
+
+        instance = this;
+
+        nbtManager = new NbtManager(this);
+        nbtManager.init();
+
         manager = new ClassManager(this);
         api = new BossShopAPI(this);
 
@@ -88,6 +101,10 @@ public class BossShop extends JavaPlugin {
         log("Disabling... bye!");
     }
 
+    public static BossShop getInstance() {
+        return instance;
+    }
+
     public ClassManager getClassManager() {
         return manager;
     }
@@ -115,6 +132,7 @@ public class BossShop extends JavaPlugin {
 
         reloadConfig();
         manager.getMessageHandler().reloadConfig();
+        nbtManager.init();
 
         if (manager.getShops() != null) {
             for (String s : manager.getShops().getShopIds().keySet()) {
@@ -193,5 +211,9 @@ public class BossShop extends JavaPlugin {
         }
     }
 
+    public String getVersion() {
+        String packet = Bukkit.getServer().getClass().getPackage().getName();
+        return packet.substring(packet.lastIndexOf('.') + 1);
+    }
 
 }

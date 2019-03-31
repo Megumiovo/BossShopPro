@@ -16,8 +16,7 @@ public class FileHandler {
     public void exportConfigs(BossShop plugin) {
         copyDefaultsFromJar(plugin
                 , "config.yml"
-                , "messages.yml"
-                , "nbt.yml");
+                , "messages.yml");
 
         if (!new File(plugin.getDataFolder().getAbsolutePath() + File.separator + "pagelayout.yml").exists()) {
             copyFromJar(plugin, plugin, false, "pagelayout.yml");
@@ -92,7 +91,7 @@ public class FileHandler {
             }
 
         } catch (Exception e) {
-            ClassManager.manager.getBugFinder().warn("Unable to load config lines of file " + filename);
+            ClassManager.manager.getBugFinder().warn("Unable to load config lines of managers " + filename);
         }
     }
 

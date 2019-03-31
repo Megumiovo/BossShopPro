@@ -25,6 +25,7 @@ public abstract class ItemDataPart {
             DURABILITY,
             NAME,
             LORE,
+            NBT,
             ENCHANTMENT,
             PLAYERHEAD,
             CUSTOMSKULL,
@@ -48,6 +49,7 @@ public abstract class ItemDataPart {
         DURABILITY = registerType(new ItemDataPartDurability());
         NAME = registerType(new ItemDataPartName());
         LORE = registerType(new ItemDataPartLore());
+        NBT = registerType(new ItemDataPartNbt());
         ENCHANTMENT = registerType(new ItemDataPartEnchantment());
         PLAYERHEAD = registerType(new ItemDataPartPlayerhead());
         CUSTOMSKULL = registerType(new ItemDataPartCustomSkull());
