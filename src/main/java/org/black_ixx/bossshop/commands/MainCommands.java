@@ -23,7 +23,7 @@ public class MainCommands implements CommandExecutor {
         this.commands.put("simulate", new SimulateCommand());
         this.commands.put("close", new CloseCommand());
         this.commands.put("open", new OpenCommand());
-        this.commands.put("nbt", new NbtCommand());
+        this.commands.put("item", new ItemCommand());
     }
 
     @Override

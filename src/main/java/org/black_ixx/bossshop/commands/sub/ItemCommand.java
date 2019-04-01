@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class NbtCommand extends MegumiCommand {
+public class ItemCommand extends MegumiCommand {
 
     private BossShop plugin = BossShop.getInstance();
 

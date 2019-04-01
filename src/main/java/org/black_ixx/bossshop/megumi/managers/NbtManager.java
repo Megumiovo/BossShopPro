@@ -11,7 +11,9 @@ import org.bukkit.inventory.ItemStack;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class NbtManager {
     private BossShop plugin;
@@ -20,41 +22,62 @@ public class NbtManager {
 
     @Getter
     private HashMap<String, ItemStack> items;
+    @Getter
+    private HashMap<String, List<NbtContent>> nbtContents;
 
     @Getter
-    YamlConfiguration nbt;
+    YamlConfiguration item;
 
     public NbtManager(BossShop plugin) {
         this.plugin = plugin;
         this.convertUtil = new ItemConvertUtil(plugin.getVersion());
         this.items = new HashMap<>();
+        this.nbtContents = new HashMap<>();
     }
 
     public void init() {
-        nbt = initFile();
-        ConfigurationSection section = nbt.getConfigurationSection("Nbts");
-        if (section == null) return;
-        for (String s : section.getKeys(false)) {
-            String convert = section.getString(s);
-            items.put(s, convertUtil.convert(convert));
+        item = initFile("item.yml");
+        YamlConfiguration nbt = initFile("nbt.yml");
+
+        ConfigurationSection itemSection = item.getConfigurationSection("Items");
+        if (itemSection != null) {
+            for (String s : itemSection.getKeys(false)) {
+                String convert = itemSection.getString(s);
+                items.put(s, convertUtil.convert(convert));
+            }
+        }
+
+        ConfigurationSection nbtSection = nbt.getConfigurationSection("Nbts");
+        if (nbtSection != null) {
+            for (String s : nbtSection.getKeys(false)) {
+                List<NbtContent> list = new ArrayList<>();
+                ConfigurationSection section = nbt.getConfigurationSection("Nbts." + s);
+                if (section == null) continue;
+                for (String s1 : section.getKeys(false)) {
+                    String type = section.getString(s1 + ".Type");
+                    String value = section.getString(s1 + ".Value");
+                    list.add(new NbtContent(type, s1, value));
+                }
+                nbtContents.put(s, list);
+            }
         }
     }
 
     private void saveNbt() {
-        File file = new File(plugin.getDataFolder(), "nbt.yml");
+        File file = new File(plugin.getDataFolder(), "item.yml");
         try {
-            nbt.save(file);
+            item.save(file);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private YamlConfiguration initFile() {
-        File file = new File(plugin.getDataFolder(), "nbt.yml");
+    private YamlConfiguration initFile(String name) {
+        File file = new File(plugin.getDataFolder(), name);
         if (!file.exists()) {
             file.getParentFile().mkdirs();
-            copyFile(plugin.getResource("nbt.yml"), file);
+            copyFile(plugin.getResource(name), file);
         }
         return YamlConfiguration.loadConfiguration(file);
     }
@@ -74,10 +97,10 @@ public class NbtManager {
         }
     }
 
-    public void add(String name, ItemStack item) {
-        String convert = convertUtil.convert(item);
-        nbt.set(String.format("Nbts.%s", name), convert);
-        items.put(name, item);
+    public void add(String name, ItemStack itemStack) {
+        String convert = convertUtil.convert(itemStack);
+        item.set(String.format("Nbts.%s", name), convert);
+        items.put(name, itemStack);
         saveNbt();
     }
 }

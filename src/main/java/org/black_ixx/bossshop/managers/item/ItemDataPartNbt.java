@@ -6,6 +6,9 @@ import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 import com.comphenix.protocol.wrappers.nbt.NbtFactory;
 import org.black_ixx.bossshop.BossShop;
 import org.black_ixx.bossshop.core.BSBuy;
+import org.black_ixx.bossshop.managers.ClassManager;
+import org.black_ixx.bossshop.managers.misc.InputReader;
+import org.black_ixx.bossshop.megumi.managers.NbtContent;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -19,11 +22,52 @@ public class ItemDataPartNbt extends ItemDataPart {
 
     @Override
     public ItemStack transform(ItemStack item, String used_name, String argument) {
-        if (!plugin.getNbtManager().getItems().containsKey(argument)) return item;
 
-        ItemStack target = plugin.getNbtManager().getItems().get(argument);
+        String[] parts = argument.split("#", 2);
+        if (parts.length != 2) {
+            ClassManager.manager.getBugFinder().severe("Mistake in Config: '" + argument + "' is not a valid '" + used_name + "'. It has to look like this: '[Item/Data]#<Value>'. For example 'Data#String:Megumi'.");
+            return item;
+        }
 
-        item = mixNbt(item, target);
+        String type = parts[0].trim();
+        String value = parts[1];
+
+        if (type.equalsIgnoreCase("item")) {
+            if (!plugin.getNbtManager().getItems().containsKey(value)) return item;
+
+            ItemStack target = plugin.getNbtManager().getItems().get(value);
+            item = mixNbt(item, target);
+        }
+        else if (type.equalsIgnoreCase("data")) {
+            if (!plugin.getNbtManager().getNbtContents().containsKey(value)) return item;
+
+            List<NbtContent> list = plugin.getNbtManager().getNbtContents().get(value);
+
+            item = getBukkitItemStack(item);
+            NbtCompound nbt = NbtFactory.asCompound(NbtFactory.fromItemTag(item));
+
+            for (NbtContent content : list) {
+                String t = content.getType();
+                String n = content.getName();
+                String v = content.getValue();
+
+                if (t.equalsIgnoreCase("string")) {
+                    nbt.put(n, v);
+                }
+                else if (t.equalsIgnoreCase("int")) {
+                    int i = InputReader.getInt(v, -1);
+                    if (i != -1) {
+                        nbt.put(n, i);
+                    }
+                }
+                else if (t.equalsIgnoreCase("double")) {
+                    double d = InputReader.getDouble(v, -1);
+                    if (d != -1) {
+                        nbt.put(n, d);
+                    }
+                }
+            }
+        }
 
         return item;
     }
@@ -62,7 +106,7 @@ public class ItemDataPartNbt extends ItemDataPart {
 
     @Override
     public List<String> read(ItemStack i, List<String> output) {
-        output.add("nbt: " + plugin.getNbtManager().getConvertUtil().convert(i));
+        output.add("nbt:Item#" + plugin.getNbtManager().getConvertUtil().convert(i));
         return output;
     }
 

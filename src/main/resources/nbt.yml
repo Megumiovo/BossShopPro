@@ -1,1 +1,11 @@
 Nbts:
+  nbta:
+  #ID
+    SpriteName:
+    #NBT name
+      Type: String
+      Value: pixelmon:sprites/pokemon/384
+      #Nbt Value
+    Taylorswift:
+      Type: Int
+      Value: 19881213
